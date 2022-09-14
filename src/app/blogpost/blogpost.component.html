@@ -1,0 +1,9 @@
+<main *ngIf="blog | async as blogs">
+    <div class="blog-container">
+        <img [src]="blogs.fields.featureImage.fields.file.url" alt="">
+        <h2>{{blogs.fields.title}}</h2>
+        <p class="author">{{blogs.fields.author}}</p>
+        <p class="summary">{{blogs.fields.summary}}</p>
+        <a [routerLink]="['blog',blogs.sys.id]">Read more</a>
+    </div>
+</main>

@@ -1,0 +1,16 @@
+<header>
+    <div>
+        <span class="logo-1">The</span>
+        <span class="logo-2">Dev</span>
+        <span class="logo-3">blog</span>
+    </div>
+</header>
+<main *ngIf="blogs | async as blog">
+    <div class="blog-container" *ngFor="let blogpost of blog.items">
+        <img [src]="blogpost.fields.featureImage.fields.file.url" alt="">
+        <h2>{{blogpost.fields.title}}</h2>
+        <p class="author">{{blogpost.fields.author}}</p>
+        <p class="summary">{{blogpost.fields.summary}}</p>
+        <a [routerLink]="['blog',blogpost.sys.id]">Read more</a>
+    </div>
+</main>
