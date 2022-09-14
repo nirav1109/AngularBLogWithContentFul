@@ -1,4 +1,4 @@
-<main *ngIf="blog | async as blogs">
+<main *ngIf="blog | async as blogs" >
     <div class="blog-container">
         <img [src]="blogs.fields.featureImage.fields.file.url" alt="">
         <h2>{{blogs.fields.title}}</h2>
